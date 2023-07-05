@@ -8,8 +8,37 @@ ABC is always changing but the current snapshot is believed to be stable.
 
 ## Compiling:
 
-To compile ABC as a binary, download and unzip the code, then type `make`.
-To compile ABC as a static library, type `make libabc.a`.
+To compile ABC as a binary, download and unzip the code, then to compile ABC as a static library, type `make libabc.a`.
+
+
+## To build Dependencies for Manthan
+
+For creating `file_generation_cex`
+
+```
+
+gcc -Wall -g -c file_generation_cex.c -o file_generation_cex.o`
+g++ -g -o file_generation_cex file_generation_cex.o libabc.a -lm -ldl -lreadline -lpthread`
+
+```
+For creating `file_generation_cnf`
+
+```
+
+gcc -Wall -g -c file_generation_cnf.c -o file_generation_cnf.o`
+g++ -g -o file_generation_cnf file_generation_cnf.o libabc.a -lm -ldl -lreadline -lpthread`
+
+```
+
+For creating `file_write_verilog`
+```
+
+gcc -Wall -g -c file_write_verilog.c -o file_write_verilog.o`
+g++ -g -o file_write_verilog file_write_verilog.o libabc.a -lm -ldl -lreadline -lpthread`
+
+```
+
+## Uses
 
 When ABC is used as a static library, two additional procedures, `Abc_Start()` 
 and `Abc_Stop()`, are provided for starting and quitting the ABC framework in 
