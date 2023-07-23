@@ -400,6 +400,18 @@ Cnf_Dat_t * Cnf_ManWriteCnf( Cnf_Man_t * p, Vec_Ptr_t * vMapped, int nOutputs )
     assert( pLits - pCnf->pClauses[0] == nLiterals );
     assert( pClas - pCnf->pClauses == nClauses );
 //Cnf_DataPrint( pCnf, 1 );
+FILE * file;
+    file=fopen("variable_mapping.txt","w");
+    Aig_ManForEachCi( p->pManAig, pObj, i )
+            {  // pObj1=pObj->pCopy;
+                //printf("%d ",pCnf->pVarNums[pObj1->Id]+1);
+                fprintf(file, "%d ",pCnf->pVarNums[pObj->Id]+1); }
+    Aig_ManForEachCo( p->pManAig, pObj, i )
+            {  // pObj1=pObj->pCopy;
+                //printf("%d ",pCnf->pVarNums[pObj1->Id]+1);
+                fprintf(file, "%d ",pCnf->pVarNums[pObj->Id]+1); }
+    fclose(file); 
+
     return pCnf;
 }
 

@@ -271,11 +271,19 @@ int * Sat_SolverGetModel( sat_solver * p, int * pVars, int nVars )
 {
     int * pModel;
     int i;
+    FILE * file;
+    file=fopen("variable_mapping.txt","w");
     pModel = ABC_CALLOC( int, nVars+1 );
-    for ( i = 0; i < nVars; i++ )
+    for ( i = 0; i < nVars; i++ ){
+    	fprintf(file, "%d ",pVars[i]);
+    	//printf("mapping of verilog veriable %d in cnf is %d\n",i,pVars[i]);
         pModel[i] = sat_solver_var_value(p, pVars[i]);
+      //printf("pmodel[i]=%d\n",pModel[i]);
+    }
+    fclose(file);
     return pModel;    
 }
+
 
 /**Function*************************************************************
 
