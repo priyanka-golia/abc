@@ -17,24 +17,24 @@ For creating `file_generation_cex`
 
 ```
 
-gcc -Wall -g -c file_generation_cex.c -o file_generation_cex.o`
-g++ -g -o file_generation_cex file_generation_cex.o libabc.a -lm -ldl -lreadline -lpthread`
+gcc -Wall -g -c file_generation_cex.c -o file_generation_cex.o
+g++ -g -o file_generation_cex file_generation_cex.o libabc.a -lm -ldl -lreadline -lpthread
 
 ```
 For creating `file_generation_cnf`
 
 ```
 
-gcc -Wall -g -c file_generation_cnf.c -o file_generation_cnf.o`
-g++ -g -o file_generation_cnf file_generation_cnf.o libabc.a -lm -ldl -lreadline -lpthread`
+gcc -Wall -g -c file_generation_cnf.c -o file_generation_cnf.o
+g++ -g -o file_generation_cnf file_generation_cnf.o libabc.a -lm -ldl -lreadline -lpthread
 
 ```
 
 For creating `file_write_verilog`
 ```
 
-gcc -Wall -g -c file_write_verilog.c -o file_write_verilog.o`
-g++ -g -o file_write_verilog file_write_verilog.o libabc.a -lm -ldl -lreadline -lpthread`
+gcc -Wall -g -c file_write_verilog.c -o file_write_verilog.o
+g++ -g -o file_write_verilog file_write_verilog.o libabc.a -lm -ldl -lreadline -lpthread
 
 ```
 
