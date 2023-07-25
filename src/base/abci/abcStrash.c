@@ -412,6 +412,11 @@ int Abc_NtkAppend( Abc_Ntk_t * pNtk1, Abc_Ntk_t * pNtk2, int fAddPos )
 ***********************************************************************/
 void Abc_NtkStrashPerform( Abc_Ntk_t * pNtkOld, Abc_Ntk_t * pNtkNew, int fAllNodes, int fRecord )
 {
+
+    FILE * file;
+    file=fopen("strash.txt","w");
+    fprintf(file, "%s ","strash"); 
+    fclose(file); 
     Vec_Ptr_t * vNodes;
     Abc_Obj_t * pNodeOld;
     int i; //, clk = Abc_Clock();
